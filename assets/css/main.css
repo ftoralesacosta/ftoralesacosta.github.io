@@ -2537,11 +2537,11 @@
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: rgba(153, 0, 0, 1);
+			background-color: rgba(0, 51, 160, 1);
 		}
 
 		.spotlight:nth-child(4) {
-			background-color: rgba(0, 51, 160, 1);
+			background-color: rgba(153, 0, 0, 1);
 		}
 
 		.spotlight:nth-child(5) {
