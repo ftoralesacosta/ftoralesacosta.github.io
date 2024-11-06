@@ -2533,11 +2533,11 @@
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: rgba(66, 152, 181, 1);
+			background-color: rgba(0, 51, 160, 1);
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: rgba(0, 51, 160, 1);
+			background-color: rgba(66, 152, 181, 1);
 		}
 
 		.spotlight:nth-child(4) {
