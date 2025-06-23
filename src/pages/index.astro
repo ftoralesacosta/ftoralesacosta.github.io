@@ -10,11 +10,12 @@ import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 
 // Page section components
+import PortfolioPreview from '../components/PortfolioPreview.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
+import WorkTimeline from '../components/WorkTimeline.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -30,19 +31,15 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+                    title="Fernando <br/> Torales Acosta"
 					align="start"
-				>
-					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
-					</div>
+                    tagline="I'm an ML Engineer interested in how machine learning can improve the tools we already use. Currently, I work on the AI for Workspace team at Google, integrating <a href='http://gemini.google.com'>advanced models</a> and popular tools like <a href='https://www.google.com/drive/'>Drive</a>, <a href='https://www.google.com/docs/'>Docs</a>, and <a href='https://www.google.com/slides/'>Slides</a>. \
+                    <br/><br/>Previously, I worked on ML for fundamental nuclear and high energy physics. I collaborated with teams to create new ML-based methods for physics experiments like differentiable hardware design optimized with gradient descent, Graph Neural Networks for feature regression, and fast transformer-based point cloud diffusion models."
+                >
 				</Hero>
 
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="Fernando smiling wearing a gray sweater and black glasses"
 					width="480"
 					height="620"
 					src="/assets/portrait.jpg"
@@ -50,13 +47,55 @@ const projects = (await getCollection('work'))
 			</header>
 
 			<Skills />
+            <WorkTimeline />
 		</div>
 
 		<main class="wrapper stack gap-20 lg:gap-48">
+
+			<!-- <section class="section with-background bg-variant"> -->
+			<!-- 	<!-1- <header class="section-header stack gap-2 lg:gap-4"> -1-> -->
+                    <!-- <!-1- <h3>Experience</h3> -1-> -->
+                <!-- <!-1- </header> -1-> -->
+
+			<!-- 	<div class="gallery"> -->
+			<!-- 		<Grid variant="small"> -->
+			<!-- 			{ -->
+                        <!-- <li class="mention-card"> -->
+                            <!-- <p> -->
+                                <!-- <Icon icon="google" size="7rem" /><br> -->
+                                <!-- ML Engineer<br> -->
+                                <!-- <a>Google</a><br> -->
+                                <!-- 2025-Present -->
+
+                            <!-- </p> -->
+                        <!-- </li> -->
+                        <!-- <li class="mention-card"> -->
+                            <!-- <p> -->
+                                <!-- <Icon icon="lbl" size="7rem" /><br> -->
+                                <!-- Postdoctoral Researcher<br> -->
+                                <!-- <a href="https://nachmangroup.github.io/html/People.html">Lawrence Berkeley Lab</a><br> -->
+                                <!-- 2022-2025 -->
+                            <!-- </p> -->
+                        <!-- </li> -->
+                        <!-- <li class="mention-card"> -->
+                            <!-- <p> -->
+                                <!-- <Icon icon="ucb" size="7rem" /><a></a><Icon icon="cern" size="7rem" /><br> -->
+                                <!-- Doctoral Researcher<br> -->
+                                <!-- <a href='https://repository.cern/records/7g8jz-z7a45'> UC Berkeley / CERN</a><br> -->
+                                <!-- 2016-2021 -->
+                            <!-- </p> -->
+                        <!-- </li> -->
+			<!-- 			} -->
+			<!-- 		</Grid> -->
+			<!-- 	</div> -->
+			<!-- </section> -->
+
+
+
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<p>Take a look below at some of my favorite projects from the past few years.</p>
 				</header>
 
 				<div class="gallery">
@@ -79,27 +118,8 @@ const projects = (await getCollection('work'))
 				</div>
 			</section>
 
-			<section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
 
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section>
+
 		</main>
 
 		<ContactCTA />
@@ -232,7 +252,7 @@ const projects = (await getCollection('work'))
 
 	.mention-card {
 		display: flex;
-		height: 7rem;
+		height: 20rem;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -241,12 +261,14 @@ const projects = (await getCollection('work'))
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+        font-size: 1.9rem;
+
 	}
 
 	@media (min-width: 50em) {
 		.mention-card {
 			border-radius: 1.5rem;
-			height: 9.5rem;
+			height: 20rem;
 		}
 	}
 </style>

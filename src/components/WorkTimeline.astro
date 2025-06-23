@@ -1,0 +1,236 @@
+---
+// src/components/WorkTimeline.astro
+import Icon from './Icon.astro';
+
+const workExperiences = [
+  {
+    date: "June 2025 - Present",
+    title: "Machine Learning Engineer",
+    company: { name: "Google (Alphabet)", url: "https://about.google/" },
+    description: "I'm currently a machine learning engineer working on the AI for Workspace team at Google, where I'll work on improving popular services like Drive, Docs, Sheets, and more.",
+    icons: ["google"],
+  },
+  {
+    date: "Feb 2022 - June 2025",
+    title: "Postdoctoral Researcher",
+    company: { name: "Lawrence Berkeley National Lab", url: "https://www.lbl.gov/" },
+    description: "I was a postdoctoral research fellow in the machine learning for fundamental physics group, led by Benjamin Nachman. We worked at the intersection of physics and deep learning. I worked on detector data deconvolution, differentiable detector design, and generative modeling for collider data.",
+    icons: ["lbl"],
+  },
+  {
+    date: "May 2016 - Dec 2021",
+    title: "Doctoral Researcher",
+    company: { name: "University of California, Berkeley", url: "https://www.berkeley.edu/" },
+    description: "I conducted my PhD research as a member of the ALICE collaboration at CERN. I worked on identifiyng 'deep photons' where we used modern ML techniques to identify direct photons produced in the initial hard scattering. My theses focused on studying parton fragmentation by measuring isolated γ-hadron correlations in pp and p–Pb collisions.",
+    icons: ["ucb","cern"],
+  },
+];
+---
+
+<section class="timeline-section">
+      <h2 class="timeline-title">Experience</h2>
+      <div class="timeline-container">
+    {workExperiences.map((item) => (
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          {item.icons && item.icons.length > 0 && (
+            <div class="timeline-icons-container">
+              {item.icons.map((iconName) => (
+                <Icon icon={iconName} />
+              ))}
+            </div>
+          )}
+          <div class="text-content-wrapper">
+            <time class="timeline-date">{item.date}</time>
+            <h3>{item.title}</h3>
+            <h4>
+              {item.company.url ? (
+                <a href={item.company.url} target="_blank" rel="noopener noreferrer">
+                  {item.company.name}
+                </a>
+              ) : (
+                item.company.name
+              )}
+            </h4>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  /* --- Base Styles (Unchanged) --- */
+    .timeline-section { padding: 3rem 1rem; max-width: 82%; margin: 0 auto; }
+      .timeline-title { text-align: center; font-size: 2.7rem; margin-bottom: 3rem; font-weight: 700; }
+        .timeline-container { position: relative; padding-left: 30px; }
+
+          /* --- MODIFIED: The main continuous line is now drawn per-item --- */
+    /* .timeline-container::before { ... } /* --- REMOVED THIS ENTIRE RULE --- */
+
+    .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 60px; display: flex; }
+
+      /* --- ADDED: Rules for drawing line segments for each item --- */
+    .timeline-item::before,
+    .timeline-item::after {
+      content: '';
+          position: absolute;
+          width: 5px; /* Line thickness */
+          background-color: var(--gray-500);
+          left: 10px; /* Horizontally centers the line with the dot */
+          z-index: 0; /* Ensures line is behind the dot */
+        }
+
+    /* Draws the line segment ABOVE the dot */
+    .timeline-item::before {
+      top: 0;
+      height: calc(50% - 1.6rem);
+  }
+
+    /* Draws the line segment BELOW the dot */
+    .timeline-item::after {
+      top: calc(50% + 1.6rem);
+      height: calc(50% - 1.6rem + 3rem);
+  }
+
+    /* Hide the line above the very first item */
+    .timeline-item:first-child::before {
+      display: none;
+        }
+
+    /* Hide the line below the very last item */
+    .timeline-item:last-child::after {
+      display: none;
+        }
+    
+    .timeline-dot {
+      position: absolute;
+          left: -3.0px;
+          width: 30px;
+          height: 30px;
+          background-color: var(--color-background);
+          border: 3px solid var(--accent-regular);
+          border-radius: 50%;
+          z-index: 1; /* Keep dot on top of the line segments */
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+    .timeline-item:first-child .timeline-dot { background-color: var(--accent-regular); }
+          
+    .timeline-content {
+      background: var(--gradient-subtle);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--gray-800);
+          padding: 1.5rem;
+          border-radius: 1.5rem;
+          transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+        }
+    .timeline-content:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+      .text-content-wrapper { flex-grow: 1; }
+        .timeline-date { font-size: 1.05rem; color: var(--gray-300); margin-bottom: 0.75rem; display: block; font-weight: 500; }
+          .timeline-content h3 { margin-top: 0; margin-bottom: 0.75rem; color: var(--gray-100); font-size: 1.5rem; font-weight: 600; }
+            .timeline-content h4 { margin-top: 0; margin-bottom: 0.75rem; color: var(--gray-50); font-size: 1.1rem; font-weight: 600; }
+              .timeline-content p { margin-bottom: 0; line-height: 1.7; color: var(--gray-300); font-size: 1.00rem; }
+
+                /* --- Link Styles (Unchanged) --- */
+    .timeline-content h4 a {
+      color: inherit;
+          text-decoration: none;
+          transition: color 0.2s ease-in-out;
+          border-bottom: 2px solid transparent;
+          padding-bottom: 2px;
+        }
+    .timeline-content h4 a:hover {
+      color: var(--accent-regular);
+          border-bottom-color: var(--accent-regular);
+        }
+
+    /* --- Icon Styles (Unchanged) --- */
+    .timeline-icons-container { display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; flex-shrink: 0; }
+      .timeline-icons-container :global(svg) { width: 7.75rem; height: 7.75rem; opacity: 0.9; color: var(--gray-400); }
+            
+              /* --- Responsive Styles (Unchanged) --- */
+    @media (max-width: 768px) {
+      .timeline-section { padding: 2rem 0.5rem; }
+          .timeline-title { font-size: 2rem; margin-bottom: 2rem; }
+              .timeline-container { padding-left: 20px; }
+                  .timeline-container::before { left: 5px; }
+                      .timeline-item { padding-left: 20px; margin-bottom: 2.5rem; }
+                          .timeline-dot { left: calc(5px + 2.5px - 9px); width: 18px; height: 18px; }
+                              .timeline-content { padding: 1rem; gap: 1rem; }
+                                  .timeline-content h3 { font-size: 1.2rem; }
+                                      .timeline-content p { font-size: 1.0rem; }
+                                          .timeline-icons-container :global(svg) { width: 7.25rem; height: 7.25rem; }
+                                            }
+  </style>
+
+<!-- <style> -->
+<!--   /* --- Base Styles (Unchanged) --- */ -->
+<!--     .timeline-section { padding: 3rem 1rem; max-width: 82%; margin: 0 auto; } -->
+<!--       .timeline-title { text-align: center; font-size: 2.7rem; margin-bottom: 3rem; font-weight: 700; } -->
+<!--         .timeline-container { position: relative; padding-left: 30px; } -->
+<!--           .timeline-container::before { content: ''; position: absolute; top: 0; left: 10px; width: 5px; height: 100%; background-color: var(--gray-900); z-index: 0; } -->
+<!--             .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 30px; display: flex; } -->
+<!--               .timeline-dot { position: absolute; left: -2.0px; width: 20px; height: 20px; background-color: var(--color-background); border: 2px solid var(--accent-regular); border-radius: 50%; z-index: 1; top: 50%; transform: translateY(-50%); } -->
+<!--                 .timeline-item:first-child .timeline-dot { background-color: var(--accent-regular); } -->
+                  
+<!--                     /* --- Content & Layout Styles --- */ -->
+<!--     .timeline-content { -->
+<!--       background: var(--gradient-subtle); -->
+<!--           box-shadow: var(--shadow-sm); -->
+<!--           border: 1px solid var(--gray-800); -->
+<!--           padding: 1.5rem; -->
+<!--           border-radius: 1.5rem; -->
+<!--           transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; -->
+<!--           flex-grow: 1; -->
+<!--           display: flex; -->
+<!--           align-items: center; -->
+<!--           gap: 1.5rem; -->
+<!--         } -->
+<!--     .timeline-content:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); } -->
+<!--       .text-content-wrapper { flex-grow: 1; } -->
+<!--         .timeline-date { font-size: 1.05rem; color: var(--gray-300); margin-bottom: 0.75rem; display: block; font-weight: 500; } -->
+<!--           .timeline-content h3 { margin-top: 0; margin-bottom: 0.75rem; color: var(--gray-100); font-size: 1.5rem; font-weight: 600; } -->
+<!--             .timeline-content h4 { margin-top: 0; margin-bottom: 0.75rem; color: var(--gray-50); font-size: 1.1rem; font-weight: 600; } -->
+<!--               .timeline-content p { margin-bottom: 0; line-height: 1.7; color: var(--gray-300); font-size: 1.00rem; } -->
+
+<!--                 /* --- Link Styles (NEW) --- */ -->
+<!--     .timeline-content h4 a { -->
+<!--       color: inherit; -->
+<!--           text-decoration: none; -->
+<!--           transition: color 0.2s ease-in-out; -->
+<!--           border-bottom: 2px solid transparent; -->
+<!--           padding-bottom: 2px; -->
+<!--         } -->
+<!--     .timeline-content h4 a:hover { -->
+<!--       color: var(--accent-regular); -->
+<!--           border-bottom-color: var(--accent-regular); -->
+<!--         } -->
+
+<!--     /* --- Icon Styles --- */ -->
+<!--     .timeline-icons-container { display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; flex-shrink: 0; } -->
+<!--       .timeline-icons-container :global(svg) { width: 7.75rem; height: 7.75rem; opacity: 0.9; color: var(--gray-400); } -->
+        
+<!--           /* --- Responsive Styles --- */ -->
+<!--     @media (max-width: 768px) { -->
+<!--       .timeline-section { padding: 2rem 0.5rem; } -->
+<!--           .timeline-title { font-size: 2rem; margin-bottom: 2rem; } -->
+<!--               .timeline-container { padding-left: 20px; } -->
+<!--                   .timeline-container::before { left: 5px; } -->
+<!--                       .timeline-item { padding-left: 20px; margin-bottom: 2.5rem; } -->
+<!--                           .timeline-dot { left: calc(5px + 2.5px - 9px); width: 18px; height: 18px; } -->
+<!--                               .timeline-content { padding: 1rem; gap: 1rem; } -->
+<!--                                   .timeline-content h3 { font-size: 1.2rem; } -->
+<!--                                       .timeline-content p { font-size: 1.0rem; } -->
+<!--                                           .timeline-icons-container :global(svg) { width: 7.25rem; height: 7.25rem; } -->
+<!--                                             } -->
+<!--   </style> -->
+
+

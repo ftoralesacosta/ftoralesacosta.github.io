@@ -1,0 +1,23 @@
+---
+title: My Abridged Academic Journey
+publishDate: 2025-06-02 00:00:00
+img: /assets/academic-journey.png
+img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
+description: |
+
+tags:
+  - Curiousity
+  - Luck
+  - Sunk Cost Fallacy
+---
+
+My background is in experimental nuclear physics. I got my PhD in physics from U.C. Berkeley in 2016 for studying a rare, but clean signal from Heavy Ion Collisions. Heavy Ion Collisions are interesting because they can generate a bizzare form of matter -- a plasma of quarks ang gluons that formed a 'perfect' fluid, and is controlled almost entirely by the strong nuclear force. I studied if the measurements of this signal implied the formation of quark gluon plasma in different scenarios. The field at the time was undecided, but many publications were coming out indicating that this plasma is almost always formed. My studies revealed that a very important signature of the plasma was not observed, and thus the plasma may not be forming after all. I don't think a PhD is for everyone, it's hard and there's always opportunity cost. I got lucky with a mentor that treated her graduate students very well, and I really enjoyed the actual process of writing when it came to to finish my thesis.
+
+After my PhD, I was honestly looking for industry jobs, as I had developed a stronger interest in coding, and was always interested in technology in general. But there was an amazing job posting at Lawrence Berkeley lab, where I spent most of my workdays as a graduate student. It was a post-doc job for a new group: Machine Learning for Fundament Physics. I applied and to my amazement was offered a job. While there, I applied many novel (at the time) deep learnig techniques to long-standing problems in nuclear and collider physics. It was really cool things, that looking back I'm suprised I got the chance to work on at all! I got to attend NeurIPS twice due to this work, and met some really incredible people. I talk about this work in much greater detail on the [work](/guides/content/editing-an-existing-page) part of my website.
+
+I was however still drawn to industry. Since I was a graduate student, I was interested in tooling, software, and of course, my Vim configuration. These interests were often to the detriment of the stortest path to publishing research. I really wanted to see what an engineering envirenmont was like. High energy physics requires a huge amount of engineering, but every researcher's code felt like an island for smaller projects. For huge, data intensive projects, however, I'm often reminded about this rant about the movie [Armageddon (1999)](https://www.imdb.com/title/tt0120591/trivia/?item=tr5605252). I have to ask, toungue-in-cheek, if it's easier to teach physics to engineers, or engineers to physicists. Most of my co-workers really don't like my answer, let alone the question. The kernel of truth in my contrariant take was that day-to-day, good engineering practices or knowledge of deep learning are used more often than relativity, field theory, and phenomonology (the domain knowledge I used most often).
+
+That's a long tangent to say about half-way through my postdoc, I began to really make efforts towards switching to industry. I highly recommend [Jame Mulligan's post](https://www.jamesdmulligan.com/post/2024-career-transition/) about transitioning to industry as a researcher. It helped me greatly and I'm not sure how things would have turned out for me if had I not read it.
+
+I think I got into science in the first place due to a combination of reasons. I had a natural curiousity, that in retrospect may have been more oriented toward astronomy than pure physics. I also had grand and altruistic motivations; I was really interested in contributing, in some small but real way, to the library of human knowledge. I wanted to learn something, and have that expand the boundaries of human knowledge. I also did not want to simply be a small cog of some large industrial machine -- at least not for my whole life. I had a naive view, ethically, that this would be the best use of my talents. I've since really re-thought a lot of these views. It's not that I've taken the moral-relativism pill. Not at all. But I thought about what my actual strengths are, what my weaknesses are, what I could continue to contribute on my current path, and at what cost. I had already decided to switch out of academia, but this [speech](https://www.youtube.com/watch?v=W3I3kAg2J7w) by Grand Sanderson. I admit, the title of course cliche, but it really helped me re-evaluate where my specific talents are best utilized.
+
