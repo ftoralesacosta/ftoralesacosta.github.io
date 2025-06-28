@@ -22,92 +22,98 @@ import Hero from '../components/Hero.astro';
 
 			<section>
 				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-                        My background is in experimental nuclear physics. I got my PhD in physics from U.C. Berkeley in 2016 for studying a rare, but clean, signal from Heavy Ion Collisions. Heavy Ion Collisions are interesting because they can generate a bizzare form of matter -- a, 'perfect' fluid that is controlled almost entirely by the strong nuclear force. I studied if the measurements of this signal imply the formation of quark gluon plasma in different scenarios. The field at the time was undecidied, but many publications were coming out indicating that the plasma is almost always formed. My studies revealed that a very important component of the plasma was not observed. I don't think a PhD is for everyone, it's hard and there's always opportunity cost. I got lucky with a mentor that treated her graduate students very well, and I really enjoyed the actual process of writing when it came to to finish my thesis.
-					</p>
-					<p>
-                        After my PhD, I was honestly looking for industry jobs. Serendipitously, there was an amazing job posting at Lawrence Berkeley lab, where I spent most of my workdays as a graduate student. It was a post-doc job for a new group: Machine Learning for Fundament Physics. I applied and to my amazement was offered a job.
-                        While there, I applied many novel (at the time) deep learnig techniques to long-standing problems in nuclear and collider physics. It was really cool things, that looking back I'm suprised I got the chance to work on at all! I got to attend NeurIPS twice due to this work, and met some really incredible people. I talk about this work in much greater detail in href: work tab.
-					</p>
-					<p>
-                        I was however still drawn to industry. Since I was a graduate student, I was drawn to tooling, software, and of course, Vim configuration. These interests were often to the detriment of the stortest path to publishing research. I really wanted to see what a true engineering envirenmont was. About half way through my postdoc, I began to really make efforts towards switching to industry. I highly recomend Jame Mulligan's post about transitoining to industry as a researcher.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+                <div class="content">
 
-		<ContactCTA />
-	</div>
+                    <p>
+                        My background is in experimental nuclear physics. I got my PhD in physics from U.C. Berkeley in 2016 for studying a rare, but clean, signal from **Heavy Ion Collisions**. Heavy Ion Collisions are interesting because they can generate a bizarre form of matter—a 'perfect' fluid that is controlled almost entirely by the strong nuclear force. I studied if the measurements of this signal imply the formation of quark-gluon plasma in different scenarios. The field at the time was undecided, but many publications were coming out indicating that the plasma is almost always formed. My studies revealed that a very important feature of the plasma was not observed.
+                    </p><br>
+
+                    <p>
+                        I don't think a PhD is for everyone; it's hard, and there's always an opportunity cost. I got lucky with a mentor who treated her graduate students very well, and I really enjoyed the actual process of writing when it came time to finish my thesis. After my PhD, I was honestly looking for industry jobs. Serendipitously, there was an amazing job posting at Lawrence Berkeley Lab, where I spent most of my workdays as a graduate student. It was a post-doc job for a new group: Machine Learning for Fundamental Physics. I applied and, to my amazement, was offered a job.
+                    </p><br>
+
+                    <p>
+                        While there, I applied many novel (at the time) deep learning techniques to long-standing problems in nuclear and collider physics. These were really cool things that, looking back, I'm surprised I got the chance to work on at all! I got to attend NeurIPS twice due to this work and met some incredible people. I talk about this work in much greater detail in the href: work tab.
+                    </p><br>
+
+                    <p>
+                        I was, however, still drawn to industry. Since I was a graduate student, I was drawn to tooling, software, and of course, Vim configuration. These interests were often to the detriment of the shortest path to publishing research. I really wanted to see what a true engineering environment was like. About halfway through my postdoc, I began to really make efforts towards switching to industry. I cannot recommend highly enough James Mulligan's <a href="https://www.jamesdmulligan.com/post/2024-career-transition/">write up</a> about transitioning to industry as an academic researcher, and I write about my own experience in more detail <a href="/blog/my_transition/">here</a>. These kinds of experiences will vary wildly by individual and how the industry is doing in that moment. Yet his experience helped me greatly, so I thought perhaps I should write about my own as well (he should really write more).
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="content">
+                    <p>2021 PhD Physics - UC Berkeley</p>
+                    <p>2016 B.S. Physics - Stony Brook University</p>
+                </div>
+            </section>
+            <section>
+                <h2 class="section-title">Skills</h2>
+                <div class="content">
+                    <p>Python • C • Vim • Tmux • ML • Physics</p>
+                </div>
+            </section>
+        </main>
+
+        <ContactCTA />
+    </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+}
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+.section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+}
 
-	.content {
-		grid-column: 2 / 4;
-	}
+.content {
+    grid-column: 2 / 4;
+}
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+.content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+}
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+.content :global(a:hover),
+.content :global(a:focus) {
+    text-decoration-color: currentColor;
+}
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+@media (min-width: 50em) {
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 60% 1fr;
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .about > :global(:first-child) {
+        grid-column-start: 2;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    section {
+        display: contents;
+        font-size: var(--text-lg);
+    }
+}
 </style>
