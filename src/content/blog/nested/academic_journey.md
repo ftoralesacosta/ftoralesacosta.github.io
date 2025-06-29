@@ -3,7 +3,7 @@ title: My Abridged Academic Journey
 publishDate: 2025-06-02 00:00:00
 img: /assets/academic-journey.png
 img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
-description: |
+description: | Originally written about why I got into science, ended up more about why I decided to leave.
 
 tags:
   - Curiousity
