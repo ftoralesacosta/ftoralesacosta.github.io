@@ -2,9 +2,10 @@
 title: Diffusion for Complete Generation of Collider Events
 publishDate: 2020-03-02 00:00:00
 img: /assets/eic_diffusion.png
+img_credit: Model Architecture of 2-step diffusion process
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  End-to-end generative modeling for high-dimensional point cloud datasets in physics
 tags:
   - Diffusion
   - Point Clouds

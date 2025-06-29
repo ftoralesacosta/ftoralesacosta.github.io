@@ -11,6 +11,7 @@ import Grid from '../components/Grid.astro';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
+console.log(posts.map(p => ({ title: p.data.title, order: p.data.publishDate.valueOf() })));
 ---
 
 <BaseLayout

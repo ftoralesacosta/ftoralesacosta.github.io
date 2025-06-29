@@ -1,10 +1,10 @@
 ---
 title: My Abridged Academic Journey
-publishDate: 2025-06-02 00:00:00
+publishDate: 2025-06-19 00:00:00
 img: /assets/academic-journey.png
-img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
-description: | Originally written about why I got into science, ended up more about why I decided to leave.
-
+img_alt: A chalk-board drawing of a stick-man running up stairs towards a graduation cap
+description: |
+  Originally written about why I got into science, ended up more about why I decided to leave.
 tags:
   - Curiousity
   - Luck

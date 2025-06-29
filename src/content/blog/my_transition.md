@@ -1,8 +1,8 @@
 ---
 title: My Transition
-publishDate: 2025-06-02 00:00:00
+publishDate: 2025-06-20 00:00:00
 img: /assets/transition.jpg
-img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
+img_alt: A rainbow water-color explosion siphoned into a black hole from the left-hand side, with icons connected like a graph on the right
 description: |
     Classic example of taking a booming industry for granted.
 tags:

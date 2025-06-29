@@ -1,9 +1,9 @@
 ---
 title: The Quark Gluon Plasma
-publishDate: 2019-12-01 00:00:00
+publishDate: 2025-06-19 00:00:00
 img: /assets/quark-gluon-plasma.jpg
 img_credit: "Image Credit: Girolamo Sferrazaa Papa"
-img_alt: A bright pink sheet of paper used to wrap flowers curves in front of rich blue background
+img_alt: A small bright white circle with arcs of orange and red, on a grey bubble background
 description: |
     We understand very little about the force that brought us the atomic bomb and nuclear energy. There's a very peculiar state of matter that we can create for a fraction of a second that's over 260,000 times hotter than the core of the sun that scientists can study to better understand this mysterious nuclear force.
 tags:
