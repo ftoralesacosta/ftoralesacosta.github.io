@@ -6,6 +6,8 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
 
+  site: 'https://ftoralesacosta/github.io',
+
   // --- For standard .md (Markdown) files ---
   markdown: {
     remarkPlugins: [
