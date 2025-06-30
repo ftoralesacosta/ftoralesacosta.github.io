@@ -1,6 +1,6 @@
 ---
 title: My Abridged Academic Journey
-publishDate: 2025-06-19 00:00:00
+publishDate: 2025-06-20 00:00:00
 img: /assets/academic-journey.png
 img_alt: A chalk-board drawing of a stick-man running up stairs towards a graduation cap
 description: |

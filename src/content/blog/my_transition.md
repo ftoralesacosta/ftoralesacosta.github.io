@@ -1,6 +1,6 @@
 ---
 title: My Transition
-publishDate: 2025-06-20 00:00:00
+publishDate: 2025-06-21 00:00:00
 img: /assets/transition.jpg
 img_alt: A rainbow water-color explosion siphoned into a black hole from the left-hand side, with icons connected like a graph on the right
 description: |
