@@ -20,5 +20,22 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
-.idea/
+# Dependency lock files (uncomment the one you use)
+package-lock.json
+
+# Astro Build Output
+dist/
+.astro/ # Astro's internal cache and generated files
+.netlify/ # If deploying with Netlify (local dev server cache etc.)
+.vercel/ # If deploying with Vercel (local dev server cache etc.)
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and OS-specific files
+.idea/ # IntelliJ IDEA
+.vscode/ # VS Code
+.DS_Store # macOS
+Thumbs.db # Windows
