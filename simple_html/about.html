@@ -7,6 +7,7 @@
     <style>
         :root {
             --bg-color: #1d2021;      /* Gruvbox Hard Dark */
+            --bg-color: #282828;      
             --text-main: #ebdbb2;     
             --text-muted: #a89984;    
             --primary-color: #8ec07c; /* Gruvbox Lighter Aqua */
@@ -87,7 +88,7 @@
             <a href="about.html" class="active">About</a>
             <a href="work.html">Work</a>
             <a href="blog.html">Blog</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -98,17 +99,36 @@
 
         <section class="about-grid">
             <div class="about-text">
-                <h2>Background & Journey</h2>
+                <h2 style="color: var(--primary-color);">Quick</h2>
                 <ul>
-                    <li><strong>Current Focus:</strong> I am an ML Engineer at Google, dedicating my time to the AI for Workspace team where I integrate advanced models into foundational tools like Drive, Docs, and Slides.</li>
-                    <li><strong>Past Experience:</strong> Prior to my current role, I served as a Postdoctoral Researcher at Lawrence Berkeley National Lab, working at the unique intersection of fundamental physics and deep learning.</li>
-                    <li><strong>Academic Roots:</strong> I completed my PhD in Physics at UC Berkeley, actively participating in the ALICE collaboration at CERN, utilizing modern CNNs to study parton fragmentation.</li>
-                    <li><strong>Technical Philosophy:</strong> I strongly believe in tinkering and model evaluation. My goal is to leverage AI specifically to improve human workflows—not entirely replace them.</li>
+                    <li><span style="color:var(--primary-color)">Current Focus:</span> I am an ML Engineer at Google, dedicating my time to the AI for Workspace team where I integrate advanced models into foundational tools like Drive, Docs, and Slides.</li>
+                    <li><span style="color:var(--primary-color)">Past Experience:</span> Prior to my current role, I served as a Postdoctoral Researcher at Lawrence Berkeley National Lab, working at the unique intersection of fundamental physics and deep learning.</li>
+                    <li><span style="color:var(--primary-color)">Academic Roots:</span> I completed my PhD in Nuclear & Particle Physics at UC Berkeley.I served as a member of the ALICE collaboration at CERN, studying the hottest known state of matter and perfect fluid, Quark Gluon Plasma.</li>
                 </ul>
             </div>
             
             <div class="about-image">
                 <img src="assets/portrait.jpg" alt="Fernando Torales Acosta">
+            </div>
+        </section>
+
+        <section class="about-grid">
+            <div class="about-text">
+                <h2 style="color: var(--primary-color);">Background & Journey</h2>
+                   My background is in experimental nuclear physics. I got my PhD in physics from U.C. Berkeley in 2016 for studying a rare, but clean, signal from **Heavy Ion Collisions**. Heavy Ion Collisions are interesting because they can generate a bizarre form of matter—a 'perfect' fluid that is controlled almost entirely by the strong nuclear force. I studied if the measurements of this signal imply the formation of quark-gluon plasma in different scenarios. The field at the time was undecided, but many publications were coming out indicating that the plasma is almost always formed. My studies revealed that a very important feature of the plasma was not observed.<br><br>
+
+After my PhD, I was honestly looking for industry jobs. Serendipitously, there was an amazing job posting at Lawrence Berkeley Lab, where I spent most of my workdays as a graduate student. It was a post-doc job for a new group: Machine Learning for Fundamental Physics. I applied and, to my amazement, was offered a job.
+
+While there, I applied many novel (at the time) deep learning techniques to long-standing problems in nuclear and collider physics. These were really cool things that -- in retrospect -- I'm surprised I got the chance to work on at all. I got to attend NeurIPS twice due to this work and met some incredible people. I talk about this work in much greater detail in my <a href="work.html">work page</a>.<br><br>
+
+
+I was, however, still drawn to industry. Since I was a graduate student, I was drawn to tooling, software, and of course, <i>configuring vim</i>. These interests were often to the detriment of the shortest path to publishing research. I really wanted to see what a true engineering environment was like. About halfway through my postdoc, I began to really make efforts towards switching to industry. I cannot recommend highly enough <a href="https://www.jamesdmulligan.com/post/2024-career-transition">James Mulligan's post</a> about transitioning to industry as an academic researcher. These kinds of experiences will vary wildly by individual and how the industry is doing in that moment. Yet his experience helped me greatly, so I thought perhaps I should write about <a href="blog.html"><i>my own experience</i></a>  as well (if you click one link, click his though).<br><br>
+
+
+I wish I could say I never regret pursuing a PhD. It's definitely not for everyone: it's hard, there's always great opportunity cost and I don't think it's something that should be persued to advance a career in industry. Despite that, I'm overall very grateful for the experience. I got very lucky with a mentor who treated her graduate students very well, and a PI that gave me space to pursue the things that were important to me.  I travelled around the world and met incredibley genuine, intelligent people I continue to call my friends.
+
+
+
             </div>
         </section>
 
@@ -138,4 +158,5 @@
 
 </body>
 </html>
+
 
