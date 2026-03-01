@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Optimal use of Segmentation for Sampling Calorimeters - Fernando Torales Acosta</title>
+        <style>
+        :root {
+            --bg-color: #32302f;      /* Gruvbox Soft Dark */
+            --bg-card: #1d2021;       /* Darker background for code blocks or callouts */
+            --text-main: #ebdbb2;     
+            --text-muted: #a89984;    
+            --primary-color: #d3869b; /* Gruvbox Bright Purple */
+            --border-color: #504945;  
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navigation (Same as main site) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--text-main); }
+        .nav-brand:hover { text-decoration: none; }
+        .nav-links a { margin-left: 1.5rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-color); text-decoration: none; }
+        .nav-links a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.2rem; }
+
+        /* Article Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+            transform: translateX(-4px);
+        }
+
+        /* Article Header */
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin: 0 0 0.5rem 0; line-height: 1.2; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Article Hero Image */
+        .article-hero {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            background-color: var(--border-color);
+        }
+
+        /* Article Content Formatting */
+        .article-content {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .article-content h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .article-content p { margin-bottom: 1.5rem; }
+
+        /* Footnotes */
+        .footnotes {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footnotes ol { padding-left: 2rem; }
+        .footnotes li { margin-bottom: 0.5rem; }
+        .footnote-backref {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 0.3rem;
+        }
+
+        /* Code or Callout Block */
+        .callout {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+        </style>
+    </head>
+    <body>
+
+       <div class="container">
+            <a href="work.html" class="back-link">← Back to Work</a>
+
+            <header class="article-header">
+                <h1>The Optimal use of Segmentation for Sampling Calorimeters</h1>
+                <div class="article-meta">Deep Neural Networks • Point Clouds • Calorimeter Segmentation • 2026</div>
+            </header>
+            <strong>End-to-end optimization of detector design guided by optimal software utilization.</strong>
+            <h1><strong><a href="#" target="_blank">Full Paper Link</a></strong></h1>
+
+            <img src="assets/calo_optimization.pdf" alt="Iridescent ripples of a bright blue and pink liquid" class="article-hero">
+
+            <div class="article-content">
+
+                <h2>Synopsis</h2>
+                <p>
+                    [cite_start]One of the key design choices of any sampling calorimeter is how fine to make the longitudinal and transverse segmentation. [cite: 180] [cite_start]To inform this choice, we study the impact of calorimeter segmentation on energy reconstruction. [cite: 181] [cite_start]To ensure that the trends are due entirely to hardware and not to a sub-optimal use of segmentation, we deploy deep neural networks to perform the reconstruction. [cite: 182] [cite_start]These networks make use of all available information by representing the calorimeter as a point cloud. [cite: 183] 
+                </p>
+                <p>
+                    [cite_start]To demonstrate our approach, we simulate a detector similar to the forward calorimeter system intended for use in the ePIC detector, which will operate at the upcoming Electron Ion Collider. [cite: 184] [cite_start]We find that for the energy estimation of isolated charged pion showers, relatively fine longitudinal segmentation is key to achieving an energy resolution that is better than 10% across the full phase space. [cite: 185]
+                </p>
+
+                <div class="callout">
+                    [cite_start]<strong>Key Insight:</strong> By employing Graph Neural Networks and DeepSets on unaggregated point-cloud representations of calorimeter showers, hardware design can be guided directly by optimal software utilization, streamlining the development of high-granularity calorimeters without relying on suboptimal, classical reconstruction algorithms during the design phase. [cite: 191, 196]
+                </div>
+
+                <h2>Abstract</h2>
+                <p>
+                    [cite_start]One of the key design choices of any sampling calorimeter is how fine to make the longitudinal and transverse segmentation. [cite: 180] [cite_start]To inform this choice, we study the impact of calorimeter segmentation on energy reconstruction. [cite: 181] [cite_start]To ensure that the trends are due entirely to hardware and not to a sub-optimal use of segmentation, we deploy deep neural networks to perform the reconstruction. [cite: 182] [cite_start]These networks make use of all available information by representing the calorimeter as a point cloud. [cite: 183] [cite_start]To demonstrate our approach, we simulate a detector similar to the forward calorimeter system intended for use in the ePIC detector, which will operate at the upcoming Electron Ion Collider. [cite: 184] [cite_start]We find that for the energy estimation of isolated charged pion showers, relatively fine longitudinal segmentation is key to achieving an energy resolution that is better than 10% across the full phase space. [cite: 185] [cite_start]These results provide a valuable benchmark for ongoing EIC detector optimizations and may also inform future studies involving high-granularity calorimeters in other experiments at various facilities. [cite: 186]
+                </p>
+
+                <h2>Introduction</h2>
+                <p>
+                    [cite_start]Calorimeters are a critical component of many particle and nuclear physics detectors. [cite: 188] [cite_start]The reconstruction of the energy flow in such detectors requires custom algorithms because of the diversity of possible geometry and readout configurations. [cite: 189] [cite_start]For running experiments, these algorithms are optimized over years by a number of researchers. [cite: 190] [cite_start]Classically, this is not possible during the design phase and so significantly simplified approaches are used during this stage. [cite: 191] [cite_start]If the hardware is designed with suboptimal software, then the resulting instrument will be suboptimal. [cite: 192] [cite_start]This question is particularly acute for the calorimeter(s) of the Electron Ion Collider (EIC), as they are being designed now and will need to be finely segmented to deliver the science goals of the EIC <sup id="fnref:1"><a href="#fn:1">1</a></sup>. [cite: 192]
+                </p>
+                <p>
+                    [cite_start]We propose to employ machine learning (ML) to address this key challenge with traditional detector optimization. [cite: 193] [cite_start]Deep neural networks can readily process the lowest-level information within a cluster of cells produced from an electromagnetic or hadronic shower. [cite: 194] [cite_start]Previous studies on calorimeter energy estimation and particle identification for collider experiments have shown that utilizing this information outperforms existing approaches and provides an excellent approximation to the optimal reconstruction <sup id="fnref:2"><a href="#fn:2">2</a></sup>. [cite: 195] [cite_start]Most importantly, machine learning approaches are constructed automatically, enabling hardware design to be guided by approximately optimal software utilization. [cite: 196] [cite_start]In particular, the development of software-based compensation for sampling calorimeters can be streamlined. [cite: 197]
+                </p>
+                <p>
+                    [cite_start]The goal is to extract the benefits of classical, complex algorithms like those studied with ATLAS <sup id="fnref:3"><a href="#fn:3">3</a></sup> and CALICE <sup id="fnref:4"><a href="#fn:4">4</a></sup> with a training latency that allows for the comparison of many detector configurations in a reasonable amount of time. [cite: 198] [cite_start]While most of the literature is built on a fixed instrument, a couple of studies have started to explore the interplay between calorimeter design and machine learning-based energy estimation. [cite: 199] The convolutional neural network (CNN) in Ref. [cite_start]<sup id="fnref:5"><a href="#fn:5">5</a></sup> was deployed to different configurations of the cell energy calibration, noise, and bias. [cite: 200] A similar CNN in Ref. [cite_start]<sup id="fnref:6"><a href="#fn:6">6</a></sup> was used to systematically examine the relationship between bias/resolution and segmentation in a homogeneous hadronic calorimeter. [cite: 201]
+                </p>
+                <p>
+                    [cite_start]In this paper, we study the optimal use of segmentation for sampling calorimeters by employing a variety of neural network architectures. [cite: 202] [cite_start]Previous studies have shown that point-cloud methods are more powerful than image-based approaches <sup id="fnref:7"><a href="#fn:7">7</a></sup>. [cite: 203] [cite_start]While the calorimeters we study have the same transverse segmentation in each longitudinal layer (unlike the ATLAS calorimeter of Ref. <sup id="fnref:7:2"><a href="#fn:7">7</a></sup>), we still expect point cloud methods to outperform CNNs given the sparsity of calorimeter images. [cite: 204] [cite_start]As such, we focus on Graph Neural Networks (GNNs) (see e.g. Ref. <sup id="fnref:8"><a href="#fn:8">8</a></sup>) with and without (also called DeepSets <sup id="fnref:9"><a href="#fn:9">9</a></sup>) edges. [cite: 205]
+                </p>
+                <p>
+                    [cite_start]The calorimeters we study resemble the CALICE AHCAL <sup id="fnref:10"><a href="#fn:10">10</a></sup>, with a particular focus on configuration similar to the ePIC detector intended for use at the EIC <sup id="fnref:11"><a href="#fn:11">11</a></sup>. [cite: 206] [cite_start]Our objective is to offer insights into the ongoing design and optimization of the ePIC detector, considering the expected jet energies at the EIC. [cite: 207] [cite_start]In particular, the kinematic range for single particle energies is about tens of GeV at pseudo-rapidity <i>&eta;</i>=1 to approximately 250 GeV at <i>&eta;</i>=3.5 <sup id="fnref:12"><a href="#fn:12">12</a></sup>. [cite: 208] [cite_start]This paper is organized as follows. [cite: 209] The ML approaches used for energy regression are described in Sec. [cite_start]2. [cite: 209] Our simulated detector is detailed in Sec. [cite_start]3. [cite: 210] Numerical results are presented in Sec. 4, and the paper ends with conclusions and outlook in Sec. [cite_start]5. [cite: 210]
+                </p>
+
+                <div class="footnotes">
+                    <ol>
+                        <li id="fn:1">Accardi:2012qut, AbdulKhalek:2021gbh. <a href="#fnref:1" class="footnote-backref">↩</a></li>
+                        <li id="fn:2">deOliveira:2018hva, CERN-LHCC-2017-023, ATL-PHYS-PUB-2020-018, Neubuser:2021uui, Akchurin:2021afn, Akchurin:2021ahx, ATL-PHYS-PUB-2022-040, Qasim:2022rww, Kieseler:2021jxc. <a href="#fnref:2" class="footnote-backref">↩</a></li>
+                        <li id="fn:3">ATLAS:2016krp. <a href="#fnref:3" class="footnote-backref">↩</a></li>
+                        <li id="fn:4">CALICE:2012eac. <a href="#fnref:4" class="footnote-backref">↩</a></li>
+                        <li id="fn:5">Akchurin:2021afn. <a href="#fnref:5" class="footnote-backref">↩</a></li>
+                        <li id="fn:6">Neubuser:2021uui. <a href="#fnref:6" class="footnote-backref">↩</a></li>
+                        <li id="fn:7">ATL-PHYS-PUB-2022-040. <a href="#fnref:7" class="footnote-backref">↩</a> <a href="#fnref:7:2" class="footnote-backref">↩²</a></li>
+                        <li id="fn:8">Shlomi:2020gdn. <a href="#fnref:8" class="footnote-backref">↩</a></li>
+                        <li id="fn:9">deepsets. <a href="#fnref:9" class="footnote-backref">↩</a></li>
+                        <li id="fn:10">CALICE:2022uwn. <a href="#fnref:10" class="footnote-backref">↩</a></li>
+                        <li id="fn:11">Bock:2022lwp, hcalInsert. <a href="#fnref:11" class="footnote-backref">↩</a></li>
+                        <li id="fn:12">AbdulKhalek:2021gbh. <a href="#fnref:12" class="footnote-backref">↩</a></li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
+        </footer>
+
+    </body>
+</html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title - Fernando Torales Acosta</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comparison of Point Cloud and Image-based Models for Calorimeter Fast Simulation - Fernando Torales Acosta</title>
+        <style>
         :root {
             --bg-color: #32302f;      /* Gruvbox Soft Dark */
             --bg-card: #1d2021;       /* Darker background for code blocks or callouts */
@@ -26,7 +26,7 @@
         }
         a { color: var(--primary-color); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        
+
         /* Navigation (Same as main site) */
         nav {
             display: flex;
@@ -47,7 +47,7 @@
 
         /* Article Container */
         .container {
-            max-width: 800px; /* Slightly narrower for optimal reading length */
+            max-width: 800px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
@@ -63,7 +63,7 @@
         .back-link:hover {
             color: var(--primary-color);
             text-decoration: none;
-            transform: translateX(-4px); /* Little slide animation */
+            transform: translateX(-4px);
         }
 
         /* Article Header */
@@ -84,7 +84,7 @@
 
         /* Article Content Formatting */
         .article-content {
-            font-size: 1.1rem; /* Slightly larger text for reading */
+            font-size: 1.1rem;
             color: var(--text-main);
         }
         .article-content h2 {
@@ -95,15 +95,22 @@
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
-        .article-content p {
-            margin-bottom: 1.5rem;
+        .article-content p { margin-bottom: 1.5rem; }
+
+        /* Footnotes */
+        .footnotes {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
-        .article-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-        .article-content li {
-            margin-bottom: 0.5rem;
+        .footnotes ol { padding-left: 2rem; }
+        .footnotes li { margin-bottom: 0.5rem; }
+        .footnote-backref {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 0.3rem;
         }
 
         /* Code or Callout Block */
@@ -116,71 +123,91 @@
             font-size: 1rem;
         }
 
-        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); margin-top: 4rem; }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; gap: 1rem; }
-            .article-header h1 { font-size: 2rem; }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4rem;
         }
-    </style>
-</head>
-<body>
+        </style>
+    </head>
+    <body>
 
-    <nav>
-        <a href="../index.html" class="nav-brand">Fernando TA</a>
-        <div class="nav-links">
-            <a href="../about.html">About</a>
-            <a href="../work.html" class="active">Work</a>
-            <a href="../blog.html">Blog</a>
-            <a href="../index.html#contact">Contact</a>
-        </div>
-    </nav>
+        <div class="container">
+            <a href="work.html" class="back-link">← Back to Work</a>
 
-    <div class="container">
-        <a href="work.html" class="back-link">← Back to Work</a>
+            <header class="article-header">
+                <h1>Diffusion for Complete Generation of Collider Events</h1>
+                <div class="article-meta">Diffusion • Point Clouds • Transformers • 2020</div>
+            </header>
+            <strong>End-to-end generative modeling for high-dimensional point cloud datasets in physics.</strong>
+            <h1><strong><a href="https://arxiv.org/pdf/2307.04780" target="_blank">Full Paper Link</a></strong></h1>
 
-        <header class="article-header">
-            <h1>Diffusion for Complete Generation of Collider Events</h1>
-            <div class="article-meta">Machine Learning • Physics • 2024</div>
-        </header>
+            <img src="assets/image_pointcloud.pdf" alt="Iridescent ripples of a bright blue and pink liquid" class="article-hero">
 
-        <img src="assets/image_pointcloud.pdf" alt="Visualization of collider events generation" class="article-hero">
+            <div class="article-content">
 
-        <div class="article-content">
-            <p>
-                This project focuses on a deep learning approach designed to simulate high-energy collider events entirely through generative models. Traditional Monte Carlo setups are computationally expensive, so pushing the boundaries using diffusions offers an exciting alternative.
-            </p>
 
-            <h2>The Problem</h2>
-            <p>
-                In high energy physics, understanding the fundamental particles requires analyzing billions of collision events. Simulating these events is traditionally done using a chain of complex physical models, which takes an enormous amount of computational time.
-            </p>
-
-            <div class="callout">
-                <strong>Key Insight:</strong> By treating the distribution of particles as a generation task, we can use diffusion models to drastically reduce the time it takes to create highly accurate mock data.
+                <h2>Synopsis</h2>
+                This work makes the first direct comparison between two state-of-the-art score-based generative models using either images or point clouds as representations of the same high-granularity calorimeter simulation data. By comparing both approaches, we offer valuable insights into the challenges of modeling sparse hadronic showers using image-based techniques while exploring the immense potential of point-cloud methods for future experimental detectors.
             </div>
 
-            <h2>Methodology</h2>
+            <h2>Abstract</h2>
             <p>
-                We implemented a diffusion model capable of handling the highly varied and structured data outputted by these simulated collisions. The architecture needed to address several key challenges:
+                Score based generative models are a new class of generative models that have been shown to accurately generate high dimensional calorimeter datasets. Recent advances in generative models have used images with 3D voxels to represent and model complex calorimeter showers. Point clouds, however, are likely a more natural representation of calorimeter showers, particularly in calorimeters with high granularity. Point clouds preserve all of the information of the original simulation, more naturally deal with sparse datasets, and can be implemented with more compact models and data files. In this work, two state-of-the-art score based models are trained on the same s[118;1:3uet of calorimeter simulation and directly compared.
+            </p>
+
+            <h2>Introduction</h2>
+            <p>
+                Detector simulations are essential tools for data analysis by connecting particle and nuclear physics predictions to measurable quantities. However, the most precise detector simulations (usually based on GEANT <sup id="fnref:1"><a href="#fn:1">1</a></sup>) are computationally expensive. This is especially true for calorimeters, which are designed to stop most particles and thus require modeling interactions across multiple energy scales. If there was a way to build a fast simulation automatically and using the full detector dimensionality, then data analysis at existing and developing experiments could be greatly enhanced.
+            </p>
+            <p>
+                Deep learning (DL) has been used to build automated and high-dimensional fast simulations ('surrogate models') for calorimeters. Starting from Generative Adversarial Networks (GANs) and now including Diffusion Models <sup id="fnref:2"><a href="#fn:2">2</a></sup>, these methods have rapidly improved. However, nearly all proposed methods for DL-based calorimeter simulations are based on an image format (a fixed grid of pixels) <sup id="fnref:3"><a href="#fn:3">3</a></sup>. These data are unlike natural images in a number of ways, most notably in their sparsity. 
+            </p>
+
+            <h2>Representing Sparse Data</h2>
+            <p>
+                Since most cells in a high-granularity calorimeter image are empty, a more natural representation of these data may be a point cloud <sup id="fnref:4"><a href="#fn:4">4</a></sup>. Point clouds are a set of attributes assigned to locations in space; in the calorimeter case, the attribute is energy and the location is the cell coordinates. A calorimeter point cloud would require far fewer numbers to specify than an image representation, since only cells with non-zero energy would be recorded. 
+            </p>
+            <p>
+                For a fair comparison, two diffusion models (one image-based, one point-cloud based) are trained using the same score-matching strategy on representations of the same parent GEANT simulation. We simulate a high-granularity iron-scintillator calorimeter similar to the forward hadronic calorimeter planned for the ePIC detector at the Electron-Ion Collider.
+            </p>
+
+            <h2>Results & Advantages</h2>
+            <p>
+                Both models perform well for most distributions and show very promising classifier performance (AUCs) <sup id="fnref:5"><a href="#fn:5">5</a></sup>, deviating no more than 10% from the baseline at smaller deposited energies. However, the point cloud model offers several distinct advantages over the image model:
             </p>
             <ul>
-                <li>Handling varying numbers of particles per event.</li>
-                <li>Respecting the physical conservation laws (like energy and momentum).</li>
-                <li>Generating the fine-grained details of the particle jets.</li>
+                <li><strong>Data Size:</strong> The point cloud dataset requires over 100 times less disk space than the image format at full granularity.</li>
+                <li><strong>Model Size & Speed:</strong> The point cloud model is smaller by a factor of 4 compared to the image-based model, and generates sample events 3 times faster <sup id="fnref:6"><a href="#fn:6">6</a></sup>.</li>
+                <li><strong>Resolution:</strong> The point cloud model can naturally represent the calorimeter at full granularity without needing to rely on voxelized clustering, preserving the original geometric information <sup id="fnref:7"><a href="#fn:7">7</a></sup>.</li>
             </ul>
-
-            <h2>Results</h2>
             <p>
-                The resulting model successfully generated events that are statistically indistinguishable from traditional Monte Carlo generators on several key metrics, operating at a fraction of the computational cost.
+                As calorimeters continue to increase in granularity, the advantages of point clouds, combined with further model optimizations, will likely make point cloud based models a clear choice for future detectors <sup id="fnref:8"><a href="#fn:8">8</a></sup>.
             </p>
+
+            <div class="footnotes">
+                <h3>References</h3>
+                <ol>
+                    <li id="fn:1">GEANT is the standard framework for the precise simulation of the passage of particles through matter, but requires substantial processing time. <a href="#fnref:1" class="footnote-backref">↩</a></li>
+                    <li id="fn:2">Vinicius Mikuni and Benjamin Nachman. "Score-based generative models for calorimeter shower simulation." <em>Phys. Rev. D</em>, 106(9):092009, 2022. <a href="#fnref:2" class="footnote-backref">↩</a></li>
+                    <li id="fn:3">The recent CaloChallenge community comparison showcased state-of-the-art methods, but predominantly relied on modeling the calorimeters as segmented image grids. <a href="#fnref:3" class="footnote-backref">↩</a></li>
+                    <li id="fn:4">Vinicius Mikuni, Benjamin Nachman, and Mariel Pettee. "Fast Point Cloud Generation with Diffusion Models in High Energy Physics." 2023. <a href="#fnref:4" class="footnote-backref">↩</a></li>
+                    <li id="fn:5">A classifier trained to distinguish between generated and GEANT showers produced an AUC of 0.673 for the image model and 0.726 for the point cloud model. <a href="#fnref:5" class="footnote-backref">↩</a></li>
+                    <li id="fn:6">At full scale testing, the point cloud model contains roughly 620k parameters vs 2.5 million for the image model, reducing the time to sample 100k events from ~8000 seconds down to ~2600 seconds. <a href="#fnref:6" class="footnote-backref">↩</a></li>
+                    <li id="fn:7">The image representation required cells to be clustered into $5 \times 5 \times 5$ voxels due to memory limitations, while the point cloud efficiently learns from the zero-suppressed cell-level hits directly. <a href="#fnref:7" class="footnote-backref">↩</a></li>
+                    <li id="fn:8">R. Abdul Khalek et al. "Science Requirements and Detector Concepts for the Electron-Ion Collider: EIC Yellow Report." <em>Nucl. Phys. A</em>, 1026:122447, 2022. <a href="#fnref:8" class="footnote-backref">↩</a></li>
+                </ol>
+            </div>
         </div>
 
-    </div>
+        </div>
 
-    <footer>
-        &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
-    </footer>
+        <footer>
+            &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
+        </footer>
 
-</body>
+    </body>
 </html>
