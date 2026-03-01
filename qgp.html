@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Isolated Photon Hadron Correlations in pp and p-Pb Collisions - Fernando Torales Acosta</title>
+        <style>
+        :root {
+            --bg-color: #32302f;      /* Gruvbox Soft Dark */
+            --bg-card: #1d2021;       /* Darker background for code blocks or callouts */
+            --text-main: #ebdbb2;     
+            --text-muted: #a89984;    
+            --primary-color: #d3869b; /* Gruvbox Bright Purple */
+            --border-color: #504945;  
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--text-main); }
+        .nav-brand:hover { text-decoration: none; }
+        .nav-links a { margin-left: 1.5rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-color); text-decoration: none; }
+        .nav-links a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.2rem; }
+
+        /* Article Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+            transform: translateX(-4px);
+        }
+
+        /* Article Header */
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin: 0 0 0.5rem 0; line-height: 1.2; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Article Hero Image */
+        .article-hero {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            background-color: var(--border-color);
+        }
+
+        /* Article Content Formatting */
+        .article-content {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .article-content h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .article-content p { margin-bottom: 1.5rem; }
+
+        /* Footnotes */
+        .footnotes {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footnotes ol { padding-left: 2rem; }
+        .footnotes li { margin-bottom: 0.5rem; }
+        .footnote-backref {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 0.3rem;
+        }
+
+        /* Code or Callout Block */
+        .callout {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+        </style>
+    </head>
+    <body>
+
+       <div class="container">
+            <a href="work.html" class="back-link">← Back to Work</a>
+
+            <header class="article-header">
+                <h1>Isolated Photon-Hadron Correlations in pp and p-Pb Collisions</h1>
+                <div class="article-meta">ALICE • Fragmentation Functions • Event Mixing • 2021</div>
+            </header>
+            <strong>First study of photon-tagged fragmentation in p-Pb collisions at the Large Hadron Collider.</strong>
+            <h1><strong><a href="https://cds.cern.ch/record/2798950" target="_blank">Full Thesis Link</a></strong></h1>
+            
+                        <img src="assets/quark-gluon-plasma.jpg" alt="ALICE Event Display of a p-Pb Collision" class="article-hero">
+
+            <div class="article-content">
+
+                <h2>Synopsis</h2>
+                <p>
+                    Relativistic heavy-ion collisions allow us to study the thermodynamic properties of quantum chromodynamics (QCD) and the Quark-Gluon Plasma (QGP). In these collisions, high-momentum partons scatter and produce collimated sprays of particles known as jets. Because isolated "prompt" photons do not interact via the strong force, they traverse the nuclear medium unaffected and provide a clean, calibrated proxy for the initial kinematics of the recoiling parton.
+                </p>
+                <p>
+                    By measuring the correlations between these prompt photons and the associated charged hadrons, we can map out how partons fragment and measure potential modifications or energy loss. This analysis focuses on smaller collision systems—proton-proton (pp) and proton-Lead (p-Pb) at $\sqrt{s_{NN}}=5.02$ TeV—to constrain initial-state Cold Nuclear Matter (CNM) effects independent of QGP formation.
+                </p>
+
+                <div class="callout">
+                    <strong>Key Methodological Insight:</strong> To correct for detector inhomogeneities and acceptance gaps during correlation construction, an optimized event mixing technique was developed. By moving away from traditional multidimensional binning and random-access memory lookups, and instead implementing the Gale-Shapley stable matching algorithm, events were paired serially. This serial access optimization vastly reduced computational overhead and improved efficiency without sacrificing the physical accuracy of the mixed-event background.
+                </div>
+
+                <h2>Abstract</h2>
+                <p>
+                    This work presents the measurement of isolated photon-hadron correlations and the first study of photon-tagged fragmentation in p-Pb at the Large Hadron Collider using pp and p-Pb data collected by the ALICE detector. Prompt photons produced at leading order in hard scatterings constrain the kinematics of the recoiling parton, enabling the study of parton energy loss and modification to the parton fragmentation function. 
+                </p>
+                <p>
+                    For photons with $|\eta|<0.67$ and $12<p_{T}<40~GeV/c$, the associated yield of charged particles in the previously unexplored kinematic range of $0.5<p_{T}<8~GeV/c$ is measured. No significant difference between pp and p-Pb is observed. PYTHIA 8.2 and cold nuclear matter theoretical models can describe both data sets within uncertainties, setting constraints on cold nuclear matter effects on the parton fragmentation in p-Pb collisions.
+                </p>
+
+                <h2>Introduction & Motivation</h2>
+                <p>
+                    At high-energy colliders, analyzing the distribution of particles observed in detectors enables us to infer the dynamics of quarks and gluons. In larger heavy-ion systems like Pb-Pb, significant jet quenching is observed as partons lose energy traversing the QGP. However, interpreting these modifications requires a rigorous understanding of the initial state and potential cold nuclear matter (CNM) effects. Measurements in asymmetric p-Pb collisions act as a crucial control experiment.
+                </p>
+                <p>
+                    The analysis utilizes data from the ALICE Electromagnetic Calorimeter (EMCal) to trigger on high-$p_T$ isolated clusters, extracting a highly pure sample of prompt photons through a data-driven template fit method. Because these photons balance the momentum of the opposing jet, the angular correlation and $p_T$ balance between the photon and hadrons provides an ideal handle on the underlying fragmentation function.
+                </p>
+
+                <h2>Event Mixing: Serial vs. Random Access Optimizations</h2>
+                <p>
+                    A critical step in constructing two-particle correlation functions is isolating genuine physical correlations from detector acceptance effects. This is typically done through "event mixing," where trigger particles from one event are correlated with associated particles from a different, yet topologically similar, event. 
+                </p>
+                <p>
+                    Traditionally, events are categorized into multi-dimensional bins based on properties like multiplicity (V0 amplitude) and primary z-vertex. Triggered events are then mixed randomly with minimum bias events from the corresponding bin. This random access procedure is notoriously memory-intensive and computationally slow. 
+                </p>
+                <p>
+                    To optimize this, the analysis sidestepped binned random access by deploying the <strong>Gale-Shapley stable matching algorithm</strong>. By generating ordered preference lists for both $\gamma$-triggered events and minimum-bias events based on vertex and multiplicity similarity, events were matched and processed serially. This completely avoided the CPU constraints of random memory lookups and strict bin boundaries, serving as a highly elegant computational optimization for large dataset correlation analyses.
+                </p>
+
+                <h2>Results and Conclusions</h2>
+                <p>
+                    The fully corrected correlation functions were used to extract the fragmentation function proxies for both collision systems. A direct comparison of the integrated yields revealed no statistically significant modification in p-Pb compared to the baseline pp collisions. 
+                </p>
+                <p>
+                    These results firmly constrain the magnitude of cold nuclear matter effects on parton fragmentation in this kinematic phase space. The data sets are well-described by baseline PYTHIA 8.2 Monte Carlo simulations as well as specific theoretical CNM models within systematic uncertainties, implying that the nuclear environment in p-Pb collisions at ALICE does not drastically alter the fragmentation of high-energy partons.
+                </p>
+
+                <div class="footnotes">
+                    <ol>
+                        <li id="fn:1">F. T. Torales-Acosta, "Isolated Photon Hadron Correlations in $\sqrt{s_{NN}}=5.02$ TeV pp and p-Pb Collisions," CERN-THESIS-2021-235. <a href="#fnref:1" class="footnote-backref">↩</a></li>
+                        <li id="fn:2">D. Gale and L. S. Shapley, "College Admissions and the Stability of Marriage," The American Mathematical Monthly 69, no. 1 (1962): 9-15. <a href="#fnref:2" class="footnote-backref">↩</a></li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
+        </footer>
+
+    </body>
+</html>
