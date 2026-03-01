@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diffusion for Complete Generation of Collider Events - Fernando Torales Acosta</title>
+        <style>
+        :root {
+            --bg-color: #32302f;      /* Gruvbox Soft Dark */
+            --bg-card: #1d2021;       /* Darker background for code blocks or callouts */
+            --text-main: #ebdbb2;     
+            --text-muted: #a89984;    
+            --primary-color: #d3869b; /* Gruvbox Bright Purple */
+            --border-color: #504945;  
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Navigation (Same as main site) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--text-main); }
+        .nav-brand:hover { text-decoration: none; }
+        .nav-links a { margin-left: 1.5rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-color); text-decoration: none; }
+        .nav-links a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.2rem; }
+
+        /* Article Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+            transform: translateX(-4px);
+        }
+
+        /* Article Header */
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin: 0 0 0.5rem 0; line-height: 1.2; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Article Hero Image */
+        .article-hero {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            background-color: var(--border-color);
+        }
+
+        /* Article Content Formatting */
+        .article-content {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .article-content h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .article-content h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Footnote specific styling */
+        sup a {
+            padding: 0 2px;
+        }
+        .footnotes {
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .footnotes ol {
+            padding-left: 2rem;
+        }
+        .footnotes li {
+            margin-bottom: 0.5rem;
+        }
+        .footnote-backref {
+            text-decoration: none;
+            color: var(--primary-color);
+            margin-left: 0.3rem;
+        }
+
+        /* Code or Callout Block */
+        .callout {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .article-header h1 { font-size: 2rem; }
+        }
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <a href="index.html" class="nav-brand">Fernando TA</a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="work.html" class="active">Work</a>
+                <a href="blog.html">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <a href="work.html" class="back-link">← Back to Work</a>
+
+            <header class="article-header">
+                <h1>Diffusion for Complete Generation of Collider Events</h1>
+                <div class="article-meta">Diffusion • Point Clouds • Transformers • 2020</div>
+            </header>
+            <strong>End-to-end generative modeling for high-dimensional point cloud datasets in physics.</strong>
+            <h1><strong><a href="https://arxiv.org/pdf/2410.22421v2" target="_blank">Full Paper Link</a></strong></h1>
+
+            <img src="assets/eic_diffusion.png" alt="Iridescent ripples of a bright blue and pink liquid" class="article-hero">
+
+            <div class="article-content">
+
+
+                <h2>Synopsis</h2>
+                <p>
+                    Collider data is very rich, comprising a high-dimensional dataset. The data can be broken down into two categories: event-level and particle-level. Event-level data describes the primary interaction between an electron and a parton (a quark or gluon). This is high-level information that describes the collision as a whole. Particle-level data includes all the particles produced from the high-energy collision. This consists of a large number of particles (mostly mesons) that we can measure in our detectors, and each particle has features like momentum, charge, and position.
+                </p>
+                <p>
+                    We take advantage of this factored data structure by training two diffusion models: one for event-level data and one for particle-level data. The event-level model generates event-level data, such as the total number of particles in the event and the amount of energy transferred from the electron to the proton in the collision. It then passes this data to the particle-level model, which generates all the particles in the event described by the previous model. This allows for whole-event, end-to-end generation.
+                </p>
+
+                <div class="callout">
+                    <strong>Key Insight:</strong> By factoring the generation process into two specialized diffusion models—one for the event-level kinematics and multiplicity, and one for distributions of kinematics and quantum numbers of each particle species—we can efficiently create complete, end-to-end simulations of high-dimensional collider data.
+                </div>
+
+                <h2>Abstract</h2>
+                <p>
+                    At high-energy collider experiments, generative models can be used for a wide range of tasks, including fast detector simulations, unfolding, searches of physics beyond the Standard Model, and inference tasks. In particular, it has been demonstrated that score-based diffusion models can generate high-fidelity and accurate samples of jets or collider events. This work expands on previous generative models in three distinct ways. First, our model is trained to generate entire collider events, including all particle species with complete kinematic information. We quantify how well the model learns event-wide constraints such as the conservation of momentum and discrete quantum numbers. We focus on the events at the future Electron-Ion Collider, but we expect that our results can be extended to proton-proton and heavy-ion collisions. Second, previous generative models often relied on image-based techniques. The sparsity of the data can negatively affect the fidelity and sampling time of the model. We address these issues using point clouds and a novel architecture combining edge creation with transformer modules called Point Edge Transformers. Third, we adapt the foundation model OmniLearn, to generate full collider events. This approach may indicate a transition toward adapting and fine-tuning foundation models for downstream tasks instead of training new models from scratch.
+                </p>
+
+                <h2>Introduction</h2>
+                <p>
+                    High-energy collider experiments offer unique opportunities to probe the internal dynamics of protons and nuclei, study emergent phenomena such as hadronization, and search for physics beyond the Standard Model of particle physics. By analyzing the particles observed in detectors centered around the scattering vertex, it is possible to infer the dynamics of particles at subatomic scales.
+                </p>
+                <p>
+                    The next-generation experiment will be the future Electron-Ion Collider (EIC) <sup id="fnref:1"><a href="#fn:1">1</a></sup>, where high-luminosity electron-proton/nucleus scattering will be studied at center-of-mass (CM) energies up to $\sqrt{s}=140$ GeV. Analyzing vast amounts of recorded collider data is a challenging task where machine learning tools are expected to have a significant impact on the experimental and theoretical workflows. Example applications include detector design, inference tasks, searches of BSM physics, fast detector simulations, jet classification, and unfolding. Similar considerations apply to proton-proton and heavy-ion collisions at RHIC and the LHC. For recent results, see Refs. <sup id="fnref:2"><a href="#fn:2">2</a></sup> and references therein.
+                </p>
+                <p>
+                    Some of the key tools to advance different areas of collider phenomenology are generative models that can be trained to generate full collider events. Various architectures have been trained in the past to generate collider events or jets including GANs <sup id="fnref:3"><a href="#fn:3">3</a></sup>, variational autoencoders <sup id="fnref:4"><a href="#fn:4">4</a></sup>, normalizing flows <sup id="fnref:5"><a href="#fn:5">5</a></sup> and score-based diffusion models <sup id="fnref:6"><a href="#fn:6">6</a></sup>. In particular, diffusion models have been demonstrated to produce high-fidelity samples. While the sampling time is typically relatively slow compared to GANs, it has been improved significantly using techniques such as distillation <sup id="fnref:7"><a href="#fn:7">7</a></sup>.
+                </p>
+                <p>
+                    Score-based diffusion models learn an approximation of the score function or the gradients of the logarithm of the data probability. This approximation is then used during sampling to transform a simple distribution, such as a Gaussian distribution, into complex collider data. In Ref. <sup id="fnref:8:1"><a href="#fn:8">8</a></sup>, a first diffusion-based model was developed for EIC events based on pixelated images. Since &gt; 99% of the pixels are empty and the distributions of different observables can fall steeply toward their kinematic endpoints, a suitable remapping of the input variables was required. Due to its relevance in Deep Inelastic Scattering (DIS), the modeling of the scattered electron kinematics plays a critical role in electron-proton collisions that requires special attention. See also Ref. <sup id="fnref:9"><a href="#fn:9">9</a></sup> where an image-based diffusion model was developed for heavy-ion collisions.
+                </p>
+                <p>
+                    In this work, we extend previous results by developing a point cloud-based diffusion model for EIC events. By using point clouds and a novel architecture that combines edge creation with transformer modules, termed Point Edge Transformers (PET), we achieve significant improvements compared to the diffusion model of Ref. <sup id="fnref:8:2"><a href="#fn:8">8</a></sup>. In particular, we focus on success metrics such as the shape of different kinematic distributions as well as the event-wide conservation of momentum and discrete quantum numbers. We adapt the pre-existing foundation model OmniLearn <sup id="fnref:10"><a href="#fn:10">10</a></sup> to generate full EIC events. OmniLearn was initially developed for both classification and generation tasks in the context of jet physics at the LHC. To generate EIC events, including full Particle Identification (PID), we use a two-step generation process. As a first step, the scattered electron kinematics are generated. Second, the remaining particles in the event are conditioned on the electron kinematics. We expect similar multi-step generative processes may also improve the generation of full events in different collision systems. While we train the model developed here from scratch instead of fine-tuning the foundation model, our approach is closely related to OmniLearn. Our results may, therefore, point toward a transition toward adapting foundation models for different downstream tasks at collider experiments.
+                </p>
+                <p>
+                    The remainder of this paper is organized as follows. In section II, we describe the score-based diffusion model for EIC events developed in this work employing a point cloud data representation and the PET architecture. In section III, we consider several metrics to evaluate the performance of the diffusion model. We consider different particle distributions and observables as well as event-wide constraints such as momentum and baryon number conservation. We conclude and present an outlook in section IV.
+                </p>
+
+                <div class="footnotes">
+                    <ol>
+                        <li id="fn:1">R. Abdul Khalek et al., "Science Requirements and Detector Concepts for the Electron-Ion Collider: EIC Yellow Report," <a href="http://arxiv.org/abs/2103.05419" target="_blank">arXiv: 2103.05419 [physics.ins-det]</a>. <a href="#fnref:1" class="footnote-backref">↩</a></li>
+                        <li id="fn:2">See Refs. [2-32] in the full document and references therein. <a href="#fnref:2" class="footnote-backref">↩</a></li>
+                        <li id="fn:3">See Refs. [34-38] in the full document. <a href="#fnref:3" class="footnote-backref">↩</a></li>
+                        <li id="fn:4">See Ref. [39] in the full document. <a href="#fnref:4" class="footnote-backref">↩</a></li>
+                        <li id="fn:5">See Refs. [40, 41] in the full document. <a href="#fnref:5" class="footnote-backref">↩</a></li>
+                        <li id="fn:6">See Refs. [38, 42-51] in the full document. <a href="#fnref:6" class="footnote-backref">↩</a></li>
+                        <li id="fn:7">See Refs. [44, 52] in the full document. <a href="#fnref:7" class="footnote-backref">↩</a></li>
+                        <li id="fn:8">P. Devlin, J.-W. Qiu, F. Ringer, and N. Sato, "Diffusion model approach to simulating electron-proton scattering events," Phys. Rev. D 110 no. 1, (2024) 016030, arXiv: <a href="http://arxiv.org/abs/2310.16308" target="_blank">2310.16308 [hep-ph]</a>. <a href="#fnref:8:1" class="footnote-backref">↩</a> <a href="#fnref:8:2" class="footnote-backref">↩²</a></li>
+                        <li id="fn:9">Y. Go, D. Torbunov, T. Rinn, Y. Huang, H. Yu, B. Viren, M. Lin, Y. Ren, and J. Huang, "Effectiveness of denoising diffusion probabilistic models for fast and high-fidelity whole-event simulation in high-energy heavy-ion experiments," <a href="http://arxiv.org/abs/2406.01602" target="_blank">arXiv: 2406.01602 [physics.data-an]</a>. <a href="#fnref:9" class="footnote-backref">↩</a></li>
+                        <li id="fn:10">V. Mikuni and B. Nachman, "OmniLearn: A Method to Simultaneously Facilitate All Jet Physics Tasks," arXiv: 2404.16091 [hep-ph]. <a href="#fnref:10" class="footnote-backref">↩</a></li>
+                    </ol>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
+        </footer>
+
+    </body>
+</html>

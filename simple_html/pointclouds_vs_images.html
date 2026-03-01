@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Fernando Torales Acosta</title>
+    <style>
+        :root {
+            --bg-color: #32302f;      /* Gruvbox Soft Dark */
+            --bg-card: #1d2021;       /* Darker background for code blocks or callouts */
+            --text-main: #ebdbb2;     
+            --text-muted: #a89984;    
+            --primary-color: #d3869b; /* Gruvbox Bright Purple */
+            --border-color: #504945;  
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* Navigation (Same as main site) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid var(--border-color);
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--text-main); }
+        .nav-brand:hover { text-decoration: none; }
+        .nav-links a { margin-left: 1.5rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-color); text-decoration: none; }
+        .nav-links a.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 0.2rem; }
+
+        /* Article Container */
+        .container {
+            max-width: 800px; /* Slightly narrower for optimal reading length */
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Back Link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .back-link:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+            transform: translateX(-4px); /* Little slide animation */
+        }
+
+        /* Article Header */
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin: 0 0 0.5rem 0; line-height: 1.2; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* Article Hero Image */
+        .article-hero {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            background-color: var(--border-color);
+        }
+
+        /* Article Content Formatting */
+        .article-content {
+            font-size: 1.1rem; /* Slightly larger text for reading */
+            color: var(--text-main);
+        }
+        .article-content h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Code or Callout Block */
+        .callout {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .article-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="nav-brand">Fernando TA</a>
+        <div class="nav-links">
+            <a href="../about.html">About</a>
+            <a href="../work.html" class="active">Work</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <a href="work.html" class="back-link">← Back to Work</a>
+
+        <header class="article-header">
+            <h1>Diffusion for Complete Generation of Collider Events</h1>
+            <div class="article-meta">Machine Learning • Physics • 2024</div>
+        </header>
+
+        <img src="assets/image_pointcloud.pdf" alt="Visualization of collider events generation" class="article-hero">
+
+        <div class="article-content">
+            <p>
+                This project focuses on a deep learning approach designed to simulate high-energy collider events entirely through generative models. Traditional Monte Carlo setups are computationally expensive, so pushing the boundaries using diffusions offers an exciting alternative.
+            </p>
+
+            <h2>The Problem</h2>
+            <p>
+                In high energy physics, understanding the fundamental particles requires analyzing billions of collision events. Simulating these events is traditionally done using a chain of complex physical models, which takes an enormous amount of computational time.
+            </p>
+
+            <div class="callout">
+                <strong>Key Insight:</strong> By treating the distribution of particles as a generation task, we can use diffusion models to drastically reduce the time it takes to create highly accurate mock data.
+            </div>
+
+            <h2>Methodology</h2>
+            <p>
+                We implemented a diffusion model capable of handling the highly varied and structured data outputted by these simulated collisions. The architecture needed to address several key challenges:
+            </p>
+            <ul>
+                <li>Handling varying numbers of particles per event.</li>
+                <li>Respecting the physical conservation laws (like energy and momentum).</li>
+                <li>Generating the fine-grained details of the particle jets.</li>
+            </ul>
+
+            <h2>Results</h2>
+            <p>
+                The resulting model successfully generated events that are statistically indistinguishable from traditional Monte Carlo generators on several key metrics, operating at a fraction of the computational cost.
+            </p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Fernando Torales Acosta. Designed minimally with pure HTML/CSS.
+    </footer>
+
+</body>
+</html>
