@@ -140,7 +140,7 @@
 
             <header class="article-header">
                 <h1>Isolated Photon-Hadron Correlations in pp and p-Pb Collisions</h1>
-                <div class="article-meta">ALICE • Fragmentation Functions • Event Mixing • 2021</div>
+                <div class="article-meta">ALICE • Fragmentation Functions • Fast Stable Matching Algorithms • 2021</div>
             </header>
             <strong>First study of photon-tagged fragmentation in p-Pb collisions at the Large Hadron Collider.</strong>
             <h1><strong><a href="https://cds.cern.ch/record/2798950" target="_blank">Full Thesis Link</a></strong></h1>
@@ -151,14 +151,16 @@
 
                 <h2>Synopsis</h2>
                 <p>
-                    Relativistic heavy-ion collisions allow us to study the thermodynamic properties of quantum chromodynamics (QCD) and the Quark-Gluon Plasma (QGP). In these collisions, high-momentum partons scatter and produce collimated sprays of particles known as jets. Because isolated "prompt" photons do not interact via the strong force, they traverse the nuclear medium unaffected and provide a clean, calibrated proxy for the initial kinematics of the recoiling parton.
+                    Relativistic heavy-ion collisions allow us to study the thermodynamic properties of quantum chromodynamics (QCD) and the <a href=qgp.html>Quark-Gluon Plasma (QGP)</a>. In these collisions, high-momentum partons scatter and produce collimated sprays of particles known as jets. Because isolated "prompt" photons do not interact via the strong force, they traverse the nuclear medium unaffected and provide a clean, calibrated proxy for the initial kinematics of the recoiling parton.
                 </p>
                 <p>
                     By measuring the correlations between these prompt photons and the associated charged hadrons, we can map out how partons fragment and measure potential modifications or energy loss. This analysis focuses on smaller collision systems—proton-proton (pp) and proton-Lead (p-Pb) at $\sqrt{s_{NN}}=5.02$ TeV—to constrain initial-state Cold Nuclear Matter (CNM) effects independent of QGP formation.
                 </p>
 
                 <div class="callout">
-                    <strong>Key Methodological Insight:</strong> To correct for detector inhomogeneities and acceptance gaps during correlation construction, an optimized event mixing technique was developed. By moving away from traditional multidimensional binning and random-access memory lookups, and instead implementing the Gale-Shapley stable matching algorithm, events were paired serially. This serial access optimization vastly reduced computational overhead and improved efficiency without sacrificing the physical accuracy of the mixed-event background.
+                    <strong>Key Insight:</strong> The existence of a "perfect liquid"—Quark-Gluon Plasma (QGP)—in smaller collision systems remains one of the most significant open questions in relativistic nuclear physics. While signatures of fluidity in these systems have been measured previously, a critical piece of the puzzle is still missing: the energy lost from hard-scattered quarks to the medium.
+
+This work presents the first measurement using photons produced at the very beginning of the collision to constrain this energy loss in proton-proton (pp) and proton-lead (p-Pb) collisions at the Large Hadron Collider. To account for detector inhomogeneities and acceptance gaps during correlation construction, we implemented an optimized event-mixing technique. This approach utilizes a parallel Gale-Shapley stable matching algorithm and data restructuring to perform pseudo-measurements of correlations between events, allowing us to precisely identify and correct for detector imperfections.
                 </div>
 
                 <h2>Abstract</h2>
