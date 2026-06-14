@@ -109,7 +109,7 @@
             text-decoration: underline;
         }
 
-        .work-card img {
+        .work-card img, .work-card object {
             width: 100%;
             aspect-ratio: 16 / 9;
             object-fit: cover;
@@ -117,9 +117,10 @@
             border: 1px solid var(--border-color);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             background-color: var(--border-color);
+            display: block;
         }
 
-        .work-card:hover img {
+        .work-card:hover img, .work-card:hover object {
             transform: translateY(-4px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
@@ -202,7 +203,7 @@
                         Google (Alphabet)
                     </div>
                     <ul>
-                        <li>Working on the Workspace AI Platformm team, integrating advanced capabilities into user workflows.</li>
+                        <li>Working on the Workspace AI Platform team, integrating advanced capabilities into user workflows.</li>
                         <li>Improving the underlying intelligence of popular services like Drive, Docs, Sheets, and more.</li>
                     </ul>
                 </div>
@@ -246,14 +247,14 @@
                         <img src="assets/eic_diffusion.png" alt="Collider Events Project">
                     </a>
 
-                    <a href="work.html" class="work-card">
+                    <a href="pointclouds_vs_images.html" class="work-card">
                         <h3>Diffusion Models for Sparse 3D Images</h3>
-                        <img src="assets/image_pointcloud.pdf" alt="Sparse 3D Images Project">
+                        <object data="assets/image_pointcloud.pdf" type="application/pdf" style="pointer-events: none;"></object>
                     </a>
 
                     <a href="gh_correlations.html" class="work-card">
-                        <h3>Energetic Quark Supression in Heavy Ion Collisions</h3>
-                        <img src="assets/quark-gluon-plasma.jpg" alt="Energetic Quark Supression in Heavy Ion Collisions">
+                        <h3>Energetic Quark Suppression in Heavy Ion Collisions</h3>
+                        <img src="assets/quark-gluon-plasma.jpg" alt="Energetic Quark Suppression in Heavy Ion Collisions">
                     </a>
                 </div>
             </section>
