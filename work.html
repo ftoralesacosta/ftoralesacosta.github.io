@@ -75,7 +75,7 @@
         }
 
         /* Image styling aligned with your landing page updates */
-        .job img {
+        .job img, .job object {
             width: 100%;
             aspect-ratio: 16 / 9;
             object-fit: cover;
@@ -86,7 +86,7 @@
             display: block;
         }
 
-        .job img:hover {
+        .job img:hover, .job object:hover {
             transform: translateY(-4px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
@@ -136,7 +136,7 @@
                     </div>
                     <p>First study of photon-tagged fragmentation in p-Pb collisions at the Large Hadron Collider.</p>
                     <a href="gh_correlations.html" class="image-link">
-                        <img src="assets/ALICE_TRD.png" alt="Google Workspace AI integration showcase">
+                        <img src="assets/ALICE_TRD.png" alt="ALICE TRD detector display of a proton-lead collision">
                     </a>
                 </div>
  
@@ -156,7 +156,7 @@
                     </div>
                     <p>Implementation of fast, transformer-based point cloud diffusion models specifically tailored to handle sparse 3D image structures in physical experiments.</p>
                     <a href="pointclouds_vs_images.html" class="image-link">
-                        <img src="assets/image_pointcloud.pdf" alt="Visualization of sparse 3D point cloud diffusions">
+                        <object data="assets/image_pointcloud.pdf" type="application/pdf" style="pointer-events: none;">Visualization of sparse 3D point cloud diffusions</object>
                     </a>
                 </div>
 
@@ -164,9 +164,9 @@
                     <div class="job-header">
                         <span class="job-title"><a href="calo_optimization.html">Gradient Descent Detector Optimization</a></span>
                     </div>
-                    <p>Graph Neural Networks for Optimizaton Calorimeter Designs</p>
+                    <p>Graph Neural Networks for Optimization Calorimeter Designs</p>
                     <a href="calo_optimization.html" class="image-link">
-                        <img src="assets/calo_optimization.pdf" alt="Google Workspace AI integration showcase">
+                        <object data="assets/calo_optimization.pdf" type="application/pdf" style="pointer-events: none;">Visualization of calorimeter segmentation design optimization</object>
                     </a>
                 </div>
 
